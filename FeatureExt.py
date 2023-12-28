@@ -68,4 +68,4 @@ for root, dirs, files in os.walk(input_folder):
                 if file_name == filename:
                     print(f"Match found: {file_name}, {label}")
                     save_mel_spectrogram(input_file, label)
-                    break  # Stop searching for labels once found
+                    break

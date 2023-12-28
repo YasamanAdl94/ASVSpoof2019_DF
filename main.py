@@ -150,7 +150,8 @@ test_accuracy=results[1]
 print("test accuracy", test_accuracy )
 
 def f1score(p, r):
-    f1 = 2 / ((1 / p) + (1 / r))
+    epsilon = 1e-7  # A small value to avoid division by zero
+    f1 = 2 * p * r / (p + r + epsilon)
     return f1
 
 print("-" * 70)

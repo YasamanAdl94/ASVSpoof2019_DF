@@ -56,7 +56,7 @@ for root, dirs, files in os.walk(input_folder):
             filename = os.path.splitext(os.path.basename(input_file))[0]
             for line in label_data:
                 parts = line.strip().split()
-                file_name = parts[1] + ".flac"  # Extracting the audio file name
+                file_name = parts[1] # Extracting the audio file name
                 label = parts[4]  # Extracting the label from the 5th part
                 if file_name == filename:
                     print(f"Match found: {file_name}, {label}")

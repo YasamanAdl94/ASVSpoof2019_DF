@@ -61,13 +61,15 @@ with open(label_file, 'r') as labels:
 # Process each audio file in the input folder
 for root, dirs, files in os.walk(input_folder):
     for file in files:
-        if file.endswith(".flac"):
+        if file.endswith('.flac'):
             input_file = os.path.join(root, file)
-
             filename = os.path.splitext(os.path.basename(input_file))[0]
+            #print(filename)
             for line in label_data:
-                parts = line.strip().split()
-                file_name = parts[1] + ".flac"  # Extracting the audio file name
+                parts = line.strip().split( )
+                #print(parts)
+                file_name = parts[1]
+                #print(file_name)
                 label = parts[4]  # Extracting the label from the 5th part
                 if file_name == filename:
                     print(f"Match found: {file_name}, {label}")

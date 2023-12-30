@@ -3,9 +3,9 @@ import librosa
 import numpy as np
 import matplotlib.pyplot as plt
 
-input_folder = "W:\\Data\\LA\\LA\\ASVspoof2019_LA_eval\\flac"
-output_folder_fake = "W:\\workdir2\\CQT\\test\\fake"
-output_folder_real = "W:\\workdir2\\CQT\\test\\real"
+input_folder = "W:\\Data\\LA\\LA\\ASVspoof2019_LA_dev\\flac"
+output_folder_fake = "W:\\workdir2\\CQT\\dev\\fake"
+output_folder_real = "W:\\workdir2\\CQT\\dev\\real"
 def pad(x, max_len=48000):
     x_len = x.shape[0]
     if x_len >= max_len:
@@ -45,7 +45,7 @@ def save_cqt_spectrogram(input_file, label):
     plt.close()
 
 # Process each audio file in the input folder
-label_file = "W:\\Data\\LA\\LA\\ASVspoof2019_LA_cm_protocols\\ASVspoof2019.LA.cm.eval.trl.txt"
+label_file = "W:\\Data\\LA\\LA\\ASVspoof2019_LA_cm_protocols\\ASVspoof2019.LA.cm.dev.trl.txt"
 with open(label_file, 'r') as labels:
     label_data = labels.readlines()
 # Process each audio file in the input folder
